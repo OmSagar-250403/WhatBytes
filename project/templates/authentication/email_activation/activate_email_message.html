@@ -1,9 +1,16 @@
 {% autoescape off %}
 
-Hi {{ user.username }},
+Dear {{ user.username }},
 
-Please click on the link to confirm your registration,
-http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
-If you think, it's not you, then just ignore this email.
+Thank you for signing up at {{ domain }}! 🎉  
+
+To activate your account, please click the link below:  
+
+🔗 (http://{{ domain }}{% url 'activate' uidb64=uid token=token %})  
+
+If you did not sign up, you can safely ignore this email.  
+
+Best regards,  
+The {{ domain }} Team  
 
 {% endautoescape %}
