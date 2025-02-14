@@ -134,10 +134,10 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 
 # Email Host Email Address
-EMAIL_HOST_USER = ''
+EMAIL_HOST_USER = 'omsagar250403@gmail.com'
 
 # Email Host App Password
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = 'labw uhgb scza djbv'
 EMAIL_USE_TLS = True
 
 # Default email address to use for various automated correspondence from the site managers.

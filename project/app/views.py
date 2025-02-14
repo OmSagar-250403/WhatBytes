@@ -11,7 +11,8 @@ from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 from app.forms import UserRegistrationForm
 
 
@@ -72,3 +73,13 @@ def activate(request, uidb64, token):
     else:
         return render(request, 'authentication/email_activation/activation_unsuccessful.html')
 
+
+
+@login_required
+def profile_view(request):
+    return render(request, 'profile.html')
+
+@login_required
+def logout1(request):
+    logout(request)  # Logs out the user
+    return redirect('login')  # Redirect to login page after logout

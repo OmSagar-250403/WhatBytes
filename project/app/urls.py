@@ -12,7 +12,7 @@ urlpatterns = [
          ),
 
     # logout view from auth_view
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('logout/', views.logout1, name='logout'),
 
     # path for register view
     path('register/', views.register, name='register'),
@@ -28,15 +28,18 @@ urlpatterns = [
     path('password_reset_done/', auth_views.PasswordResetDoneView.as_view(template_name='authentication/02_password_reset_done.html'), name='password_reset_done'),
 
     #path to password_reset_confirm
-    path('password_reset_confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='authentication/03_password_reset_confirm.html',
+    path('password_reset_confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='authentication/04_password_reset_confirm.html',
                                                                                                  form_class=ResetPasswordConfirmForm), name='password_reset_confirm'),
 
     #path to password reset complete
-    path('password_reset_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='authentication/04_password_reset_complete.html'), name='password_reset_complete'),
+    path('password_reset_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='authentication/03_password_reset_complete.html'), name='password_reset_complete'),
 
 
     # path for homepage where successfull login will redirect
     path('', views.homepage, name='homepage'),
+
+    
+    path('profile/', views.profile_view, name='profile'),
 
 
 
